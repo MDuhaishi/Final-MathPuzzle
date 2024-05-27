@@ -12,12 +12,8 @@ import 'package:MathPuzzle/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
     await tester.pumpWidget(MathGameApp());
 
-    // Verify that the text "Login" is displayed
     expect(find.text('Login'), findsOneWidget);
-
-    // You can add more test cases here to verify the behavior of your app
   });
 }
