@@ -1207,7 +1207,6 @@ class ChangeEmail extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
                   String currentEmail = currentEmailController.text;
@@ -1246,8 +1245,10 @@ class ChangeEmail extends StatelessWidget {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromRGBO(132, 138, 242, 1),
-                  onPrimary: Colors.white,
+                  backgroundColor: Color.fromRGBO(132, 138, 242,
+                      1), // Use backgroundColor instead of primary
+                  foregroundColor:
+                      Colors.white, // Use foregroundColor instead of onPrimary
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
