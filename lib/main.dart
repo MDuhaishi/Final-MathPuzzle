@@ -59,154 +59,156 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 400,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('images/background.png'),
-                    fit: BoxFit.fill),
-              ),
-              child: Stack(
-                children: <Widget>[
-                  Positioned(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 130),
-                      child: Center(
-                        child: Column(
-                          children: [
-                            Text("Welcome to",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w400)),
-                            Text("MATHPUZZLE",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 40,
-                                    fontWeight: FontWeight.bold)),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(30.0),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(25),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Color(0xff1d1617).withOpacity(0.11),
-                                blurRadius: 40,
-                                spreadRadius: 0.0)
-                          ]),
-                      child: Column(
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(color: Colors.white))),
-                            child: TextField(
-                              controller: emailController,
-                              decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: 'Email Address',
-                                  hintStyle:
-                                      TextStyle(color: Colors.grey[400])),
-                              keyboardType: TextInputType.emailAddress,
-                            ),
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(color: Colors.white))),
-                            child: TextField(
-                              controller: passwordController,
-                              decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: 'Password',
-                                  hintStyle:
-                                      TextStyle(color: Colors.grey[400])),
-                              obscureText: true,
-                            ),
-                          )
-                        ],
-                      )),
-                  SizedBox(height: 20.0),
-                  Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(12),
-                      onTap: () => signIn(context),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: 400,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('images/background.png'),
+                      fit: BoxFit.fill),
+                ),
+                child: Stack(
+                  children: <Widget>[
+                    Positioned(
                       child: Container(
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          gradient: LinearGradient(colors: [
-                            Color.fromRGBO(132, 138, 242, 1),
-                            Color.fromRGBO(132, 138, 242, .6),
-                          ]),
-                        ),
+                        margin: EdgeInsets.only(top: 130),
                         child: Center(
-                          child: Text(
-                            'Login',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                          child: Column(
+                            children: [
+                              Text("Welcome to",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w400)),
+                              Text("MATHPUZZLE",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 40,
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30.0),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(25),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Color(0xff1d1617).withOpacity(0.11),
+                                  blurRadius: 40,
+                                  spreadRadius: 0.0)
+                            ]),
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      bottom: BorderSide(color: Colors.white))),
+                              child: TextField(
+                                controller: emailController,
+                                decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: 'Email Address',
+                                    hintStyle:
+                                        TextStyle(color: Colors.grey[400])),
+                                keyboardType: TextInputType.emailAddress,
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      bottom: BorderSide(color: Colors.white))),
+                              child: TextField(
+                                controller: passwordController,
+                                decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: 'Password',
+                                    hintStyle:
+                                        TextStyle(color: Colors.grey[400])),
+                                obscureText: true,
+                              ),
+                            )
+                          ],
+                        )),
+                    SizedBox(height: 20.0),
+                    Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(12),
+                        onTap: () => signIn(context),
+                        child: Container(
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            gradient: LinearGradient(colors: [
+                              Color.fromRGBO(132, 138, 242, 1),
+                              Color.fromRGBO(132, 138, 242, .6),
+                            ]),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Login',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Don't have an account yet?",
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignupPage(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          "Create one.",
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don't have an account yet?",
                           style: TextStyle(
-                            color: Color.fromRGBO(132, 138, 242, 1),
-                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignupPage(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "Create one.",
+                            style: TextStyle(
+                              color: Color.fromRGBO(132, 138, 242, 1),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -1245,10 +1247,8 @@ class ChangeEmail extends StatelessWidget {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromRGBO(132, 138, 242,
-                      1), // Use backgroundColor instead of primary
-                  foregroundColor:
-                      Colors.white, // Use foregroundColor instead of onPrimary
+                  backgroundColor: Color.fromRGBO(132, 138, 242, 1),
+                  foregroundColor: Colors.white,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
