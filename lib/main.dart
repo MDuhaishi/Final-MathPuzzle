@@ -579,7 +579,7 @@ class _GamePageState extends State<GamePage> {
     Question('What is the result of (10 / 2) + 5?', ['16', '13', '6', '10'], 3),
     Question('What is the result of 5 + (5 * 2)', ['18', '2', '7', '15'], 3),
     Question(
-        'What is the result of (10 * 2)(6 * 2)?', ['4', '2', '32', '81'], 2),
+        'What is the result of (10 * 2)(6 * 2)?', ['4', '2', '240', '81'], 2),
     Question('What is the result of 7^2 - 4?', ['19', '5', '23', '45'], 3),
     Question('What is the result of (28 / 4) - 4?', ['24', '3', '10', '9'], 1),
     Question(
